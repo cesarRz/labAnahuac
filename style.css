@@ -1,0 +1,35 @@
+body{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+header{
+	width: 100%;
+	height:75px;
+	background: rgb(85, 206, 206);
+	padding-top:1px;
+}
+
+h1{
+	padding-top: 0;
+	text-align:center;
+}
+
+h2{
+	width: 100%;
+	text-align: center;
+}
+
+.showcase{
+	width: 400px;
+	height: 500px;
+	margin-left: 3%;
+	margin-top: 10px;
+	background: rgb(0,100,110,0.1);
+	border-radius: 25px;	
+	padding-top: 5px;
+	display: inline-block;
+	float: left;
+
+}

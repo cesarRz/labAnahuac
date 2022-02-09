@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin-bottom: 200px;
+    }
+    #content{
+        width: 80%;
+        margin-left: 10%;
+    }
+    .codetag{
+        color: red; 
+        border-radius:5px; 
+        background-color: rgb(230, 227, 227); 
+        padding: 2px 4px;
+    }
+    .ins{
+        background-color: rgba(179, 174, 174, 0.726);
+        padding: 20px;
+        border-radius: 20px;
+    }
+</style>
+<body>
+
+    <div id="content">
+        <!-- Ejercicio 1 -->
+        <span>
+            <div>
+                <h1>Instrucciones Ejercicio 1</h1>
+                <span>
+                    <p class="ins">
+                        Desarrollar un programa en JS que reciba como parámetro una calificación numérica a través de un elemento <b class="codetag">
+                            &lt input &gt</b> tipo número dentro de un formulario HTML. El archivo JS debe tener una función que haga la evaluación de acuerdo a la siguiente tabla: 
+                            
+                    </p>
+                    <table>
+                        <tr>
+                            <th>Rango de calificaciones</th>
+                            <th>Equivalencia</th>
+                        </tr>
+                        <tr>
+                            <td>[0,6)</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>[6,7.5)</td>
+                            <td>S</td>
+                        </tr>
+                        <tr>
+                            <td>[7.5,9)</td>
+                            <td>B</td>
+                        </tr>
+                        <tr>
+                            <td>[9,10)</td>
+                            <td>MB</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>LAP</td>
+                        </tr>
+        
+                    </table>
+                </span>
+            </div>
+            <div>
+                <h2>Actividad</h2>
+                <form action="">
+        
+                    <input type="number" id="n">
+                    <input type="button" value="Submit" onclick="funcion()">
+                </form>
+        
+                <span><p id="resultado1"></p></span>
+            
+                <script>
+                    function funcion(){
+                        var n = document.getElementById("n").value;
+                        var r = document.getElementById("resultado1");
+                        if(n > 10 || n < 0){
+                            r.innerHTML = "Numero no valido";
+                        }else{
+                            if(n >= 0 && n < 6){
+                                r.innerHTML = "NA";
+                            }
+                            else if(n >= 6 && n < 7.5){
+                                r.innerHTML = "S";
+                            }
+                            else if(n >= 7.5 && n < 9){
+                                r.innerHTML = "B";
+                            }
+                            else if(n >= 9 && n < 10){
+                                r.innerHTML = "MB";
+                            }
+                            else{
+                                r.innerHTML = "LAP";
+                            }
+                        }
+                    }
+                </script>  
+            </div>
+        </span>
+        <hr/>
+        <!-- Ejercicio 2 -->
+        <span>
+            <div>
+                <h1>Instrucciones Ejercicio 2</h1>
+                <span>
+                    <p class="ins">
+                        Desarrollar un script en JavaScript que reciba un número a través de un <b class="codetag">&lt input &gt </b>  tipo número dentro de un formulario HTML y calcule el factorial de ese número.
+                        <br>
+                        Considere que si n es positivo el factorial es 1*2*3*4*...*n, si n es cero por definición el factorial es 1 y si n es negativo el factorial no está definido.
+                        <br>
+                        Escriba el resultado en un parrafo.
+                    </p>
+    
+                </span>
+                <span>
+                    <form action="">
+                        <input type="number" id="num1">
+                        <input type="button" value="Submit" onclick="factorial()">
+                    </form>
+                </span>
+                <p>Factorial es:  <span id="res2"></span></p>
+        
+                <script>
+                    function factorial(){
+                        var n = document.getElementById("num1").value;
+                        var r = document.getElementById("res2");
+                        var sum = 1;
+                        
+                        for(var i = 1; i<=n;i++){
+                            sum = sum*i;
+                        }
+                        if(n >= 0){
+                            r.innerHTML = sum;
+                        }else{
+                            r.innerHTML = "No definido";
+                        }
+        
+                    }
+                </script>
+        
+            </div>
+        </span>
+        <hr/>
+        <!-- Ejericico 3 -->
+        <span>
+            <h1>Instrucciones Ejercicio 3</h1>
+
+                <div class="ins">
+
+                    Desarrolle un programa en JavaScript que reciba información de un formulario de HTML. El formulario deberá tener las siguientes entradas y el tipo de <b class="codetag">&lt input &gt</b> indicado.
+                    <br>
+                    <ul>
+                        <li>Nombre (text)</li>
+                        <li>Correo (email)</li>
+                        <li>Edad (number)</li>
+                        <li>Género (radio)</li>
+                        <li>Fecha de nacimiento (date)</li>
+                        <li>Color favorito (color)</li>
+                    </ul>
+                    Imprimir en un párrafo toda la información recibida de formulario.
+                </div>
+                <br>
+                <div>
+                    <form action="">
+                        <label for="">Nombre</label>
+                        <input type="text" id="name">
+                        <br>
+                        <label for="">Correo</label>
+                        <input type="email" id="mail">
+                        <br>
+                        <label for="">Edad</label>
+                        <input type="number" id="age">
+                        <br>
+                        <p>Genero</p>
+                        <input type="radio" name="g" id="M" value="Masculino"><label for="M">Masculino</label>
+                        <br>
+                        <input type="radio" name="g" id="F" value="Femenino"><label for="F">Femenino</label>
+                        <br>
+                        <br>
+                        <label for="">Fecha de nacimiento</label>
+                        <input type="date" id="birthdate">
+                        <br>
+                        <label for="">Color Favorito</label>
+                        <input type="color" id="col">
+
+                        <input type="button" onclick="info()" value="submit">
+                    </form>
+
+                    <span>
+                        <ul>
+                            <li>Nombre:  <span id="nombre"></span> </li>
+                            <li>Correo: <span id="correo"></span> </li>
+                            <li>Edad: <span id="edad"></span> </li>
+                            <li>Género: <span id="genero"></span> </li>
+                            <li>Fecha de nacimiento: <span id="fecha"></span> </li>
+                            <li>Color favorito:  <span id="color"></span> </li>
+                        </ul>
+                    </span>
+                </div>
+        </span>
+
+        <script>
+
+            function info(){
+                nombre = document.getElementById("name");
+                correo = document.getElementById("mail");
+                edad = document.getElementById("age");
+                genero = document.querySelector('input[name=g]:checked');
+                fecha = document.getElementById("birthdate");
+                color = document.getElementById("col");
+                document.getElementById("nombre"). innerHTML = nombre.value;
+                document.getElementById("correo"). innerHTML = correo.value;
+                document.getElementById("edad"). innerHTML = edad.value;
+                document.getElementById("genero"). innerHTML = genero.value;
+                document.getElementById("fecha"). innerHTML = fecha.value;
+                document.getElementById("color"). innerHTML = color.value;
+            }
+
+        </script>
+    
+    </div>
+
+</body>
+</html>
